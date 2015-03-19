@@ -13,30 +13,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $post;
 
+
 if ( ! $post->post_excerpt ) {
 	return;
-}
+}       
 
 ?>
   <div itemprop="description">
 	<?php echo apply_filters( 'woocommerce_short_description', $post->post_excerpt ) ?>
 
-<div class="twocol-one">
-<p><strong>Type:</strong> <?php echo get_post_meta( $post->ID, '_type_field', true );?></p>
+<div class="twocol-one bike-function">
+<p><?php echo "<strong>Type:</strong> " . get_post_meta( $post->ID, '_type_field', true );?></p>
 
-<p><strong>Model:</strong> <?php echo get_post_meta( $post->ID, '_model_field', true );?></p>
+<p><?php echo "<strong>Model:</strong> " . get_post_meta( $post->ID, '_model_field', true );?></p>
 
-<p><strong>Year:</strong> <?php echo get_post_meta( $post->ID, '_year_field', true );?></p>
+<p><?php echo "<strong>Year:</strong> " . get_post_meta( $post->ID, '_year_field', true );?></p>
 
-<p><strong>Category:</strong> <?php echo get_post_meta( $post->ID, '_category_field', true );?></p>
+<p><?php echo "<strong>Category:</strong> " . get_post_meta( $post->ID, '_category_field', true );?></p>
+
 </div>
-<div class="twocol-one-last">
-<p><strong>Engine:</strong> <?php echo get_post_meta( $post->ID, '_engine_field', true );?></p>
 
-<p><strong>Colour:</strong> <?php echo get_post_meta( $post->ID, '_colour_field', true );?></p>
+<div class="twocol-one-last bike-function">
+<p><?php echo "<strong>Engine:</strong> " . get_post_meta( $post->ID, '_engine_field', true );?></p>
 
-<p><strong>Mileage:</strong> <?php echo get_post_meta( $post->ID, '_mileage_field', true );?></p>
+<p><?php echo "<strong>Colour:</strong> " . get_post_meta( $post->ID, '_colour_field', true );?></p>
 
-<p><strong>Registration:</strong> <?php echo get_post_meta( $post->ID, '_registration_field', true );?></p>
+<p><?php echo "<strong>Mileage:</strong> " . get_post_meta( $post->ID, '_mileage_field', true );?></p>
+
+<p><?php echo "<strong>Registration:</strong> " . get_post_meta( $post->ID, '_registration_field', true );?></p>
+
 </div>
+
   </div>
