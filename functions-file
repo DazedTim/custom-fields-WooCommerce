@@ -1,0 +1,141 @@
+<?php
+
+// Display Fields
+add_action( 'woocommerce_product_options_general_product_data', 'woo_add_custom_general_fields' );
+// Save Fields
+add_action( 'woocommerce_process_product_meta', 'woo_add_custom_general_fields_save' ); 
+
+function woo_add_custom_general_fields() {
+ 
+global $woocommerce, $post;
+echo '<div class="options_group">'; 
+
+// Text Field
+woocommerce_wp_text_input(
+array(
+	'id' => '_type_field',
+	'label' => __( 'Type', 'woocommerce' ),
+	'placeholder' => '',
+	'description' => __( 'Enter the type of bike here.', 'woocommerce' )
+)
+); 
+
+// Model Field
+woocommerce_wp_text_input(
+array(
+	'id' => '_model_field',
+	'label' => __( 'Model', 'woocommerce' ),
+	'placeholder' => '',
+	'description' => __( 'Enter the model of bike here.', 'woocommerce' )
+)
+); 
+
+// Year Field
+woocommerce_wp_text_input(
+	array(
+	'id' => '_year_field',
+	'label' => __( 'Year', 'woocommerce' ),
+	'placeholder' => '',
+	'description' => __( 'Enter the year of bike here.', 'woocommerce' )
+)
+); 
+
+// Category Field
+woocommerce_wp_text_input(
+	array(
+	'id' => '_category_field',
+	'label' => __( 'Category', 'woocommerce' ),
+	'placeholder' => '',
+	'description' => __( 'Enter the category of bike here.', 'woocommerce' )
+)
+); 
+
+// Engine Field
+woocommerce_wp_text_input(
+	array(
+	'id' => '_engine_field',
+	'label' => __( 'Engine', 'woocommerce' ),
+	'placeholder' => '',
+	'description' => __( 'Enter the engine of bike here.', 'woocommerce' )
+)
+); 
+
+// Colour Field
+woocommerce_wp_text_input(
+	array(
+	'id' => '_colour_field',
+	'label' => __( 'Colour', 'woocommerce' ),
+	'placeholder' => '',
+	'description' => __( 'Enter the colour of bike here.', 'woocommerce' )
+)
+); 
+
+// Mileage Field
+woocommerce_wp_text_input(
+	array(
+	'id' => '_mileage_field',
+	'label' => __( 'Mileage', 'woocommerce' ),
+	'placeholder' => '',
+	'description' => __( 'Enter the mileage of bike here.', 'woocommerce' )
+)
+); 
+
+// Registration Field
+woocommerce_wp_text_input(
+	array(
+	'id' => '_registration_field',
+	'label' => __( 'Registration', 'woocommerce' ),
+	'placeholder' => '',
+	'description' => __( 'Enter the registration of bike here.', 'woocommerce' )
+)
+); 
+
+ echo '</div>';
+ 
+} 
+
+function woo_add_custom_general_fields_save( $post_id ){
+
+        // Type Field
+	$woocommerce_text_field = $_POST['_type_field'];
+	if( !empty( $woocommerce_text_field ) )
+	update_post_meta( $post_id, '_type_field', esc_attr( $woocommerce_text_field ) ); 
+	
+	// Model Field
+	$woocommerce_text_field = $_POST['_model_field'];
+	if( !empty( $woocommerce_text_field ) )
+	update_post_meta( $post_id, '_model_field', esc_attr( $woocommerce_text_field ) ); 
+	
+	// Year Field
+	$woocommerce_text_field = $_POST['_year_field'];
+	if( !empty( $woocommerce_text_field ) )
+	update_post_meta( $post_id, '_year_field', esc_attr( $woocommerce_text_field ) ); 
+	
+        // Category Field
+	$woocommerce_text_field = $_POST['_category_field'];
+	if( !empty( $woocommerce_text_field ) )
+	update_post_meta( $post_id, '_category_field', esc_attr( $woocommerce_text_field ) ); 
+	
+	// Engine Field
+	$woocommerce_text_field = $_POST['_engine_field'];
+	if( !empty( $woocommerce_text_field ) )
+	update_post_meta( $post_id, '_engine_field', esc_attr( $woocommerce_text_field ) ); 
+	
+	// Colour Field
+	$woocommerce_text_field = $_POST['_colour_field'];
+	if( !empty( $woocommerce_text_field ) )
+	update_post_meta( $post_id, '_colour_field', esc_attr( $woocommerce_text_field ) ); 
+	
+	// Mileage Field
+	$woocommerce_text_field = $_POST['_mileage_field'];
+	if( !empty( $woocommerce_text_field ) )
+	update_post_meta( $post_id, '_mileage_field', esc_attr( $woocommerce_text_field ) ); 
+	
+	// Registration Field
+	$woocommerce_text_field = $_POST['_registration_field'];
+	if( !empty( $woocommerce_text_field ) )
+	update_post_meta( $post_id, '_registration_field', esc_attr( $woocommerce_text_field ) );
+
+}
+
+?>
